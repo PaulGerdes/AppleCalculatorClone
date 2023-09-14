@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: rgb(58, 58, 58);
+  width: 100%;
+  height: 1000px;
+  padding: 20px;
+  max-width: 500px;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+#result {
+  font-size: 90px;
+  text-align: right;
+  border: 20px;
+  border-color: black;
+  color: white;
+  margin-right: 40px;
+}
+
+.item {
+  font-size: 100px;
+
+  border: 20px;
+  align-items: right;
+  border-radius: 30px;
+  padding: -100px;
+  margin: 20px;
+}
+#ACButton,
+#plusmenusbutton {
+  font-size: 55px;
+  font-weight: bolder;
+}
+.orangebuttons,
+#orangebutton {
+  background-color: hsl(39, 100%, 50%);
+}
+.lastline {
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+.zerobig {
+  padding-left: 70px;
+  padding-right: 80px;
+}
+.itemlastline {
+  font-size: 100px;
+  border: 20px;
+
+  border-radius: 30px;
+  margin: 20px;
+}
