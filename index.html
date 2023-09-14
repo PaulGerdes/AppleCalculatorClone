@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
   <body>
     <div class="container">
@@ -15,27 +14,28 @@
         <button class="item" id="ACButton">AC</button
         ><button class="item" id="plusmenusbutton">+/-</button>
         <button class="item">%</button>
-        <button class="item orangebuttons">:</button>
+        <button onclick="divi()" class="item orangebuttons">:</button>
         <button class="item number">7</button>
         <button class="item number">8</button>
         <button class="item number">9</button>
 
-        <button class="item orangebuttons">x</button
+        <button onclick="multi()" class="item orangebuttons">x</button
         ><button class="item number">4</button>
         <button class="item number">5</button>
         <button class="item number">6</button>
 
-        <button class="item orangebuttons">-</button>
-        <button class="item number">1</button
+        <button onclick="menusfunc()" class="item orangebuttons">-</button>
+        <button id="number1" class="item number">1</button
         ><button class="item number">2</button
         ><button class="item number">3</button
-        ><button class="item" id="orangebutton">+</button>
+        ><button onclick="plusfunc()" class="item" id="orangebutton">+</button>
       </div>
       <div class="lastline">
-        <button class="itemlastline">0</button>
+        <button id="number0" class="itemlastline">0</button>
         <button class="itemlastline">,</button>
-        <button class="itemlastline orangebuttons">=</button>
+        <button onclick="result()" class="itemlastline orangebuttons">=</button>
       </div>
     </div>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
