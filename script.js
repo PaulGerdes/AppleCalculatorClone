@@ -5,6 +5,8 @@ let rechenwert2;
 let Plus = false;
 let ergebnis;
 let Minus = false;
+let Mal = false;
+let Geteilt = false;
 let Rechenknopfgedrückt = false;
 if (
   (Rechenknopfgedrückt =
@@ -66,6 +68,15 @@ for (let i = 0; i <= 9; i++) {
     Rechenknopfgedrückt = true;
     Minus = true;
   });
+
+  document.getElementById("geteiltButton").addEventListener("click", () => {
+    Rechenknopfgedrückt = true;
+    Geteilt = true;
+  });
+  document.getElementById("malButton").addEventListener("click", () => {
+    Rechenknopfgedrückt = true;
+    Mal = true;
+  });
 }
 // ErgebnisButton
 document.getElementById("solutionbutton").addEventListener("click", () => {
@@ -77,6 +88,7 @@ document.getElementById("solutionbutton").addEventListener("click", () => {
     console.log(rechenwert2);
     ergebnis = rechenwert1 + rechenwert2;
     console.log(ergebnis);
+    Math.round(ergebnis);
     document.getElementById("result").innerHTML = ergebnis;
     Plus = false;
 
@@ -104,6 +116,7 @@ document.getElementById("solutionbutton").addEventListener("click", () => {
     console.log(rechenwert2);
     ergebnis = rechenwert1 - rechenwert2;
     console.log(ergebnis);
+    ergebnis = Math.round(ergebnis);
     document.getElementById("result").innerHTML = ergebnis;
     Minus = false;
     numberTwo = [];
@@ -115,6 +128,52 @@ document.getElementById("solutionbutton").addEventListener("click", () => {
         numberOne.push(numberOne);
 
         ergebnis = rechenwert1 + rechenwert2;
+      }
+    }
+    Rechenknopfgedrückt = false;
+  }
+  if (Geteilt == true) {
+    rechenwert1 = +numberOne.join("");
+    console.log(rechenwert1);
+    rechenwert2 = +numberTwo.join("");
+    console.log(rechenwert2);
+    ergebnis = rechenwert1 / rechenwert2;
+    console.log(ergebnis);
+    ergebnis = Math.round(ergebnis);
+    document.getElementById("result").innerHTML = ergebnis;
+    Geteilt = false;
+    numberTwo = [];
+    numberOne = [];
+
+    numberOne.push(ergebnis);
+    for (let i = 0; i < 3; i++) {
+      if (i == 2) {
+        numberOne.push(numberOne);
+
+        ergebnis = rechenwert1 / rechenwert2;
+      }
+    }
+    Rechenknopfgedrückt = false;
+  }
+  if (Mal == true) {
+    rechenwert1 = +numberOne.join("");
+    console.log(rechenwert1);
+    rechenwert2 = +numberTwo.join("");
+    console.log(rechenwert2);
+    ergebnis = rechenwert1 * rechenwert2;
+    console.log(ergebnis);
+    ergebnis = Math.round(ergebnis);
+    document.getElementById("result").innerHTML = ergebnis;
+    Mal = false;
+    numberTwo = [];
+    numberOne = [];
+
+    numberOne.push(ergebnis);
+    for (let i = 0; i < 3; i++) {
+      if (i == 2) {
+        numberOne.push(numberOne);
+
+        ergebnis = rechenwert1 * rechenwert2;
       }
     }
     Rechenknopfgedrückt = false;
@@ -133,10 +192,7 @@ function ACbutton() {
   ergebnis = 0;
   numberTwo = [];
   numberOne = [];
-  //for (let i = 0; i < numberOne.length; i++) {
-  //delete numberOne[i];
-  // console.log("numberOne löschen");
-  //}
+
   document.getElementById("result").innerHTML = rechenwert1;
   document.getElementById("result").innerHTML = rechenwert2;
 }
