@@ -209,8 +209,25 @@ function ProzentButton() {
     console.log(ergebnis);
     ergebnis = ergebnis / 100;
     ergebnis = ergebnis.toFixed(2);
+    document.getElementById("result").innerHTML = ergebnis;
+  } else {
+    rechenwert1 = +numberOne.join("");
+    console.log(rechenwert1);
+    console.log(numberOne);
+    rechenwert1 = rechenwert1 / 100;
+    rechenwert1 = rechenwert1.toFixed(2);
+    console.log(rechenwert1);
+    numberOne = [];
+    numberOne.push(rechenwert1);
+    document.getElementById("result").innerHTML = rechenwert1;
+    rechenwert1 = 0;
   }
 
-  document.getElementById("result").innerHTML = ergebnis;
   console.log("test734");
+}
+document
+  .getElementById("plusmenusbutton")
+  .addEventListener("click", plusminusfunc);
+function plusminusfunc() {
+  console.log("test");
 }
