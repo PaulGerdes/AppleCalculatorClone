@@ -15,7 +15,12 @@ if (
       document.getElementById("result").innerHTML)
 ) {
   ACbutton();
-  console.log("test1");
+  function newrechnung(pressedNumber) {
+    numberOne.push(pressedNumber.target.innerHTML);
+    rechenwert1 = +numberOne.join("");
+    document.getElementById("result").innerHTML = rechenwert1;
+    console.log("test1");
+  }
 } else if (
   +numberOne.join("") - +numberTwo.join("") ==
   document.getElementById("result").innerHTML
@@ -195,4 +200,13 @@ function ACbutton() {
 
   document.getElementById("result").innerHTML = rechenwert1;
   document.getElementById("result").innerHTML = rechenwert2;
+}
+document
+  .getElementById("prozentButton")
+  .addEventListener("click", ProzentButton);
+function ProzentButton() {
+  console.log(ergebnis);
+  let ergebnis = Math.round(ergebnis / 100);
+  document.getElementById("result").innerHTML = ergebnis;
+  console.log("test734");
 }
