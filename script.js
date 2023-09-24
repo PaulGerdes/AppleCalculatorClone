@@ -93,7 +93,7 @@ document.getElementById("solutionbutton").addEventListener("click", () => {
     console.log(rechenwert2);
     ergebnis = rechenwert1 + rechenwert2;
     console.log(ergebnis);
-    Math.round(ergebnis);
+    ergebnis = ergebnis.toFixed(2);
     document.getElementById("result").innerHTML = ergebnis;
     Plus = false;
 
@@ -121,7 +121,7 @@ document.getElementById("solutionbutton").addEventListener("click", () => {
     console.log(rechenwert2);
     ergebnis = rechenwert1 - rechenwert2;
     console.log(ergebnis);
-    ergebnis = Math.round(ergebnis);
+    ergebnis = ergebnis.toFixed(2);
     document.getElementById("result").innerHTML = ergebnis;
     Minus = false;
     numberTwo = [];
@@ -144,7 +144,7 @@ document.getElementById("solutionbutton").addEventListener("click", () => {
     console.log(rechenwert2);
     ergebnis = rechenwert1 / rechenwert2;
     console.log(ergebnis);
-    ergebnis = Math.round(ergebnis);
+    ergebnis = ergebnis.toFixed(2);
     document.getElementById("result").innerHTML = ergebnis;
     Geteilt = false;
     numberTwo = [];
@@ -167,7 +167,7 @@ document.getElementById("solutionbutton").addEventListener("click", () => {
     console.log(rechenwert2);
     ergebnis = rechenwert1 * rechenwert2;
     console.log(ergebnis);
-    ergebnis = Math.round(ergebnis);
+    ergebnis = ergebnis.toFixed(2);
     document.getElementById("result").innerHTML = ergebnis;
     Mal = false;
     numberTwo = [];
@@ -205,8 +205,12 @@ document
   .getElementById("prozentButton")
   .addEventListener("click", ProzentButton);
 function ProzentButton() {
-  console.log(ergebnis);
-  let ergebnis = Math.round(ergebnis / 100);
+  if (ergebnis > 0) {
+    console.log(ergebnis);
+    ergebnis = ergebnis / 100;
+    ergebnis = ergebnis.toFixed(2);
+  }
+
   document.getElementById("result").innerHTML = ergebnis;
   console.log("test734");
 }
