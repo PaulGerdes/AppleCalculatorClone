@@ -209,6 +209,8 @@ function ProzentButton() {
     console.log(ergebnis);
     ergebnis = ergebnis / 100;
     ergebnis = ergebnis.toFixed(2);
+    numberOne = [];
+    numberOne.push(ergebnis);
     document.getElementById("result").innerHTML = ergebnis;
   } else {
     rechenwert1 = +numberOne.join("");
