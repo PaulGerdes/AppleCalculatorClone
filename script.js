@@ -231,5 +231,18 @@ document
   .getElementById("plusmenusbutton")
   .addEventListener("click", plusminusfunc);
 function plusminusfunc() {
-  console.log("test");
+  if (document.getElementById("result").innerHTML == rechenwert1) {
+    rechenwert1 = rechenwert1 - rechenwert1 * 2;
+    numberOne = [];
+    numberOne.push(rechenwert1);
+    document.getElementById("result").innerHTML = rechenwert1;
+  } else if (document.getElementById("result").innerHTML == rechenwert2) {
+    rechenwert2 = rechenwert2 - rechenwert2 * 2;
+    numberTwo = [];
+    numberTwo.push(rechenwert2);
+    document.getElementById("result").innerHTML = rechenwert2;
+  } else {
+    ergebnis = ergebnis - ergebnis * 2;
+    document.getElementById("result").innerHTML = ergebnis;
+  }
 }
